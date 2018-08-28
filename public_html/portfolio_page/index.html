@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" /> 
+		<meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, user-scalable=no">
+		<title>Portfolio - Marcin Bystrzycki&reg;</title>
+		<link href="https://fonts.googleapis.com/css?family=Noto+Sans" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Bellefair" rel="stylesheet">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+		<link rel="stylesheet" type="text/css" href="portfolio_page/css/style.css" /> 
+	</head>
+	<body>
+		<nav class="Nav">
+			<div class="MenuButtonWrapper">
+				<div class="MenuButton" id="menuButton">
+					<span class="BurgerLine unhovered"></span>
+					<span class="BurgerLine unhovered"></span>
+					<span class="BurgerLine unhovered"></span>
+					<span class="BurgerLine unhovered"></span>
+				</div>
+			</div>
+			<div class="NavContainer" id="navList">
+				<div class="NavLogo">
+					<p>mb.</p>
+				</div>
+				<ul class="NavList">
+					<div class="NavListWrapper">
+						<li class="NavItem" ><a href='#' data-margin="0" data-anchor="0" data-section=".Home" id="homeAnchor"><span>h</span><span>o</span><span>m</span><span>e</span></a></li>
+						<hr />
+						<li class="NavItem"><a href='#' data-margin="-100vw" data-anchor="1" data-section=".Works" id="worksAnchor"><span>w</span><span>o</span><span>r</span><span>k</span><span>s</span></a></li>
+						<hr />
+						<li class="NavItem"><a href='#' data-margin="-200vw" data-anchor="2" data-section=".Contact" id="contactAnchor"><span>a</span><span>b</span><span>o</span><span>u</span><span>t</span></a></li>
+					</div>
+				</ul>
+			</div>
+		</nav>
+		<section class="Home">
+			<canvas class="CanvasAnimation" id="canvasAnimation"></canvas>
+			<div class="Logo">
+				<span class="Word1">
+					bm
+				</span>
+				<span class="Word2">
+					ystrzycki
+				</span>
+				<p><span><</span> junior front-end developer <span>/></span><span class="Line"> _</span></p>
+			</div>
+			<div class="WelcomeTextContainer">
+				<p class="WelcomeText" id="welcomeText"></p>
+			</div>
+			<div class="ScrollingAnimation">
+				<span class="ScrollingDot"></span>
+			</div>
+		</section>
+		<section class="Works">
+			<div class="WorksContainer">
+				<div class="Work TodoApp">
+					<div class="WorkInfo">
+						<button class="WorkInfoIcon">
+							<i class="fa fa-info" aria-hidden="true"></i>
+						</button>
+						<a href="https://github.com/MarcinBystrzycki/ReactReduxSimpleTodoApp" target="_blank">
+							<button class="GithubIcon" id="githubButton1">
+								<i class="fa fa-github" aria-hidden="true"></i>
+							</button>
+						</a>
+					</div>
+					<div class="WorkDesc">
+						<p>Simple todo web application with basic functionalities. This app was created with <span>ReactJS</span>, <span>JSX</span>, <span>ES6</span> and <span>Redux</span> technologies. I've also used a great tool called create-react-app which makes configuring new React project super simple!</p>
+					</div>
+				</div>
+				<div class="Work Kanban">
+					<div class="WorkInfo">
+						<button class="WorkInfoIcon">
+							<i class="fa fa-info" aria-hidden="true"></i>
+						</button>
+						<a href="https://github.com/MarcinBystrzycki/KanbanBoardJS" target="_blank">
+							<button class="GithubIcon" id="githubButton2">
+								<i class="fa fa-github" aria-hidden="true"></i>
+							</button>
+						</a>
+					</div>
+					<div class="WorkDesc">
+						<p>Kanban board that enables you to optimize the flow of your work. This app has basic functionalities like adding, editing titles and deleting columns and cards. It's written in vanilla <span>JavaScript</span> and it's using simple <span>AJAX</span> requests to communicate with API.</p>
+					</div>
+				</div>
+				<div class="Work Portfolio">
+					<div class="WorkInfo">
+						<button class="WorkInfoIcon">
+							<i class="fa fa-info" aria-hidden="true"></i>
+						</button>
+						<a href="https://github.com/MarcinBystrzycki/PortfolioPage" target="_blank">
+							<button class="GithubIcon" id="githubButton3">
+								<i class="fa fa-github" aria-hidden="true"></i>
+							</button>
+						</a>
+					</div>
+					<div class="WorkDesc">
+						<p>Obviously, it's the page you're visiting right now. I've used <span>jQuery</span> library because it provides awesome tools for creating eyecatching visual effects. On back-end I've created a basic <span>Node.js</span> server with nodemailer module for handling contact form.</p>
+					</div>
+				</div>
+				<div class="Work QuoteMachine">
+					<div class="WorkInfo">
+						<button class="WorkInfoIcon">
+							<i class="fa fa-info" aria-hidden="true"></i>
+						</button>
+						<a href="https://github.com/MarcinBystrzycki/AjaxRandomQuoteMachine" target="_blank">
+							<button class="GithubIcon" id="githubButton4">
+								<i class="fa fa-github" aria-hidden="true"></i>
+							</button>
+						</a>
+					</div>
+					<div class="WorkDesc">
+						<p>Random quote machine - title says everything. Created as an exercise in using asynchronous JS requests (<span>AJAX</span>). I've also used <span>jQuery</span> library.</p>
+					</div>					
+				</div>
+				<div class="Work CountryApp">
+					<div class="WorkInfo">
+						<button class="WorkInfoIcon">
+							<i class="fa fa-info" aria-hidden="true"></i>
+						</button>
+						<a href="https://github.com/MarcinBystrzycki/CountryApp" target="_blank">
+							<button class="GithubIcon" id="githubButton5">
+								<i class="fa fa-github" aria-hidden="true"></i>
+							</button>
+						</a>
+					</div>
+					<div class="WorkDesc">
+						<p>This CountriesApp is also created with <span>ReactJS</span> and <span>Redux</span>. Moreover, it's my first approach to this cool React Router library that provides so called dynamic routing feature for web app.</p>
+					</div>
+				</div>
+				<div class="Work ChatApp">
+					<div class="WorkInfo">
+						<button class="WorkInfoIcon">
+							<i class="fa fa-info" aria-hidden="true"></i>
+						</button>
+						<a href="https://github.com/MarcinBystrzycki/ChatApp" target="_blank">
+							<button class="GithubIcon" id="githubButton6">
+								<i class="fa fa-github" aria-hidden="true"></i>
+							</button>
+						</a>
+					</div>
+					<div class="WorkDesc">
+						<p>In development process of this app I've used such technologies as (front-end) <span>ReactJS</span>, <span>ES6</span>, <span>Webpack</span> (back-end), <span>Node.js</span>, <span>Express</span> or <span>Socket.io</span> for Websockets.</p>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section class="Contact">
+			<div class="ContactInfoContainer">
+				<div class="About">
+					<p class="ContactHeader">General Inquiry</p>
+					<hr />
+					<div class="AboutLeftCol">
+						<p>Where to find me:</p>
+						<p>Email:</p>
+						<p>Call:</p>
+					</div>
+					<div class="AboutRightCol">
+						<p>61-493, Poznań</p>
+						<p>darkwave99@gmail.com</p>
+						<p>(+48) 696-440-329</p>
+					</div>
+					<div class="ContactText">
+						<p>If you have an interesting project and you believe that I can help you, just choose the most comfortable way to <span>contact me</span>.</p>
+					</div>
+				</div>
+			</div>
+			<div class="FormContainer">
+				<div class="FormWrapper">
+					<form action="/" method="POST" class="ContactForm" id="contactForm">
+						<p class="ContactHeader">Specific question</p>
+						<hr />
+						<label for="name">
+							<button>
+								<i class="fa fa-user"></i>
+							</button>
+							<input class="Input" type="text" name="name" placeholder="Your name" id="name" autocomplete="off" required/>
+						</label>
+						<label for="email">
+							<button>
+								<i class="fa fa-envelope"></i>
+							</button>
+							<input class="Input" type="email" name="email" placeholder="Your e-mail" id="email" autocomplete="off" required />
+						</label>
+						<label for="subject">
+							<button>
+								<i class="fa fa-file-text-o"></i>
+							</button>
+							<input class="Input" type="text" name="subject" placeholder="Your subject" id="subject" autocomplete="off" required />
+						</label>
+						<label for="message">
+							<textarea class="Input Message" type="text" name="message" id="message" placeholder="Your message"></textarea>			
+						</label>		
+						<div>
+							<button class="SubmitFormButton" type="submit">SEND</button>
+						</div>
+					</form>
+				</div>
+			</div>
+			<footer>
+				<p>&reg; 2018 Marcin Bystrzycki</p> 
+			</footer>
+		</section>
+		<script type="text/javascript" src="portfolio_page/lib/jquery.js"></script>
+		<script type="text/javascript" src="portfolio_page/js/script-build.js"></script>
+	</body>
+</html>

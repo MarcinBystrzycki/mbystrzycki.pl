@@ -1,0 +1,658 @@
+@import url("https://fonts.googleapis.com/css?family=Monoton");
+@import url("https://fonts.googleapis.com/css?family=Lato");
+* {
+  box-sizing: border-box; }
+
+body {
+  margin: 0;
+  overflow: hidden;
+  font-family: 'Lato', serif;
+  background-color: #00111E;
+  font-size: 10px; }
+
+section {
+  float: left;
+  height: 100vh;
+  width: 100vw; }
+
+canvas {
+  height: 100vh; }
+
+nav {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 6em;
+  height: 8em;
+  z-index: 10;
+  background-color: transparent; }
+
+.Home {
+  text-align: center; }
+
+.MenuButtonWrapper {
+  position: relative;
+  z-index: 10; }
+
+.MenuButton {
+  cursor: pointer;
+  height: 70px;
+  width: 50px; }
+  .MenuButton .BurgerLine {
+    display: block;
+    position: absolute;
+    height: 0.5em;
+    border-radius: 0.5em;
+    background-color: white;
+    -webkit-transition: 0.25s;
+    -moz-transition: 0.25s;
+    -ms-transition: 0.25s;
+    -o-transition: 0.25s;
+    transition: 0.25s;
+    width: 50px; }
+    .MenuButton .BurgerLine:nth-of-type(1) {
+      top: 20px; }
+    .MenuButton .BurgerLine:nth-of-type(2) {
+      top: 30px; }
+    .MenuButton .BurgerLine:nth-of-type(3) {
+      top: 40px; }
+    .MenuButton .BurgerLine:nth-of-type(4) {
+      top: 50px; }
+
+.unhovered:nth-of-type(1) {
+  width: 50px; }
+
+.unhovered:nth-of-type(2) {
+  width: 30px; }
+
+.unhovered:nth-of-type(3) {
+  width: 45px; }
+
+.unhovered:nth-of-type(4) {
+  width: 20px; }
+
+.open:nth-of-type(1) {
+  top: 35px !important;
+  transform: rotate(45deg); }
+
+.open:nth-of-type(2) {
+  width: 0;
+  opacity: 0; }
+
+.open:nth-of-type(3) {
+  width: 0;
+  opacity: 0; }
+
+.open:nth-of-type(4) {
+  top: 35px !important;
+  transform: rotate(-45deg); }
+
+.NavContainer {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  display: block;
+  background-color: black;
+  z-index: 9;
+  display: none;
+  opacity: 0.97;
+  overflow: hidden; }
+
+.NavListWrapper {
+  position: absolute;
+  width: 100%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); }
+  .NavListWrapper hr {
+    width: 6em;
+    border-color: yellow; }
+
+.NavList {
+  text-align: center;
+  padding: 0; }
+
+.NavItem {
+  font-size: 50px;
+  list-style-type: none;
+  margin-top: 0.4em;
+  margin-bottom: 0.4em; }
+  .NavItem a {
+    text-decoration: none;
+    font-weight: 700;
+    display: inline-block;
+    color: white;
+    letter-spacing: 3px;
+    transition: 1s ease; }
+    .NavItem a span {
+      display: inline-block; }
+    .NavItem a:hover::after {
+      content: ' />'; }
+    .NavItem a:hover::before {
+      content: '< '; }
+    .NavItem a:hover span {
+      animation: kick .8s infinite;
+      -webkit-animation: kick .8s infinite; }
+      .NavItem a:hover span:nth-of-type(1) {
+        color: yellow; }
+
+.Home {
+  position: relative;
+  user-select: none; }
+
+.Logo {
+  position: absolute;
+  bottom: 2%;
+  left: 2%;
+  font-size: 9.5em;
+  color: white;
+  font-family: 'Monoton', cursive; }
+  .Logo .Word1 {
+    display: inline-block;
+    background-color: #00111E;
+    color: yellow;
+    transform: rotate(360deg) scaleX(-1);
+    clip-path: polygon(100% 0, 100% 20%, 100% 100%, 10% 100%, 10% 60%, 0 30%, 0 0);
+    -webkit-clip-path: polygon(100% 0, 100% 20%, 100% 100%, 10% 100%, 10% 60%, 0 30%, 0 0); }
+  .Logo .Word2 {
+    margin-left: -0.55em; }
+  .Logo p {
+    font-size: 0.2em;
+    font-family: 'Lato', serif;
+    text-align: right;
+    margin: 0;
+    margin-top: -1.7em; }
+    .Logo p span {
+      color: yellow; }
+    .Logo p .Line {
+      animation: blink 1s infinite; }
+
+.NavLogo {
+  position: relative;
+  top: 1%;
+  margin: 0 auto;
+  font-family: 'Monoton', cursive; }
+  .NavLogo p {
+    font-size: 5em;
+    text-align: center;
+    line-height: 0.91em;
+    padding-top: 0.5em;
+    margin: 0 auto;
+    color: white;
+    text-shadow: 0 0 20px white;
+    animation: flash 3s infinite; }
+
+.WelcomeTextContainer {
+  position: absolute;
+  top: 20%;
+  right: 15%;
+  width: 50em; }
+
+.WelcomeText {
+  color: white;
+  font-size: 15px;
+  letter-spacing: .3em;
+  text-align: justify; }
+  .WelcomeText span {
+    border-right: .1em solid yellow;
+    animation: blink 1s infinite; }
+
+.ScrollingAnimation {
+  position: absolute;
+  right: 0.75em;
+  bottom: 0.75em;
+  width: 3.5em;
+  height: 5em;
+  border: 2px solid white;
+  border-radius: 5em; }
+  .ScrollingAnimation span {
+    display: inline-block;
+    width: 0.5em;
+    height: 1em;
+    background-color: white;
+    border-radius: 1em;
+    position: relative;
+    animation: moving 1s infinite; }
+
+.WorksContainer {
+  height: 100%;
+  width: auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start; }
+
+.Work {
+  border: 2px solid #00111e;
+  height: 45%;
+  width: 30%;
+  margin: 1% 1.66%;
+  transition: .3s ease-out;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  position: relative;
+  overflow: hidden;
+  opacity: 0; }
+  .Work:hover {
+    -webkit-box-shadow: 0 0 50px rgba(255, 255, 255, 0.33);
+    -moz-box-shadow: 0 0 50px rgba(255, 255, 255, 0.33);
+    box-shadow: 0 0 50px rgba(255, 255, 255, 0.33);
+    opacity: 1; }
+    .Work:hover .WorkInfo {
+      display: inline-block; }
+
+.show {
+  opacity: 0.2;
+  transition: .5s;
+  animation: dim 1.25s; }
+
+.WorkInfo {
+  position: absolute;
+  cursor: pointer;
+  z-index: 1;
+  display: none;
+  background-color: #00111e;
+  left: -25px;
+  top: -25px;
+  width: 7em;
+  height: 7em;
+  border-radius: 50%;
+  color: yellow;
+  transition: .2s ease-out; }
+  .WorkInfo button {
+    font-size: 25px;
+    position: absolute;
+    line-height: 34px;
+    width: 36px;
+    height: 36px;
+    background-color: transparent;
+    border: none;
+    border-radius: 50%;
+    right: 18%;
+    bottom: 13%;
+    transition: .2s ease-out;
+    cursor: pointer; }
+    .WorkInfo button:focus {
+      outline: none; }
+    .WorkInfo button:hover i {
+      color: white; }
+    .WorkInfo button i {
+      color: yellow; }
+
+.GithubIcon {
+  display: none; }
+  .GithubIcon i {
+    position: relative; }
+
+.WorkDesc {
+  position: absolute;
+  top: -1px;
+  left: -160%;
+  width: 160%;
+  height: 102%;
+  background-color: rgba(0, 17, 30, 0.95);
+  transition: .2s ease-out;
+  -webkit-clip-path: polygon(0 0, 100% 0%, 70% 100%, 0% 100%);
+  clip-path: polygon(0 0, 100% 0%, 70% 100%, 0% 100%); }
+  .WorkDesc p {
+    position: relative;
+    left: 0;
+    right: 0;
+    top: 20%;
+    font-size: 1.2em;
+    text-align: justify;
+    color: white;
+    max-width: 45%;
+    margin-left: 9%;
+    user-select: none; }
+    .WorkDesc p span {
+      color: yellow; }
+
+.TodoApp {
+  background-image: url("../img/todoapp.jpg"); }
+
+.Kanban {
+  background-image: url("../img/kanban.jpg"); }
+
+.Portfolio {
+  background-image: url("../img/portfolio.jpg"); }
+
+.QuoteMachine {
+  background-image: url("../img/quotemachine.jpg"); }
+
+.CountryApp {
+  background-image: url("../img/countryapp.jpg"); }
+
+.ChatApp {
+  background-image: url("../img/chatapp.jpg"); }
+
+.Contact {
+  display: flex;
+  flex-wrap: wrap; }
+  .Contact hr {
+    width: 5em;
+    border-color: white;
+    margin-bottom: 3em; }
+
+.ContactInfoContainer {
+  width: 50%;
+  height: 100%;
+  color: white;
+  position: relative; }
+
+.About {
+  max-height: 90%;
+  width: 90%;
+  max-width: 50em;
+  position: absolute;
+  margin: 0 auto;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); }
+
+.AboutLeftCol,
+.AboutRightCol {
+  width: 50%;
+  float: left;
+  font-size: 2em;
+  margin-bottom: 0.5em;
+  overflow-wrap: break-word; }
+
+.AboutLeftCol {
+  text-transform: uppercase; }
+  .AboutLeftCol p:first-letter {
+    color: yellow; }
+
+.AboutRightCol {
+  border-left: 1px solid rgba(255, 255, 255, 0.1);
+  padding-left: 1em; }
+
+.ContactText {
+  font-size: 2em;
+  float: left;
+  text-align: justify;
+  width: 100%; }
+  .ContactText span {
+    color: yellow; }
+
+.FormContainer {
+  position: relative;
+  width: 50%;
+  height: 100%;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-content: center; }
+  .FormContainer label {
+    position: relative;
+    max-width: 70%; }
+    .FormContainer label button {
+      position: absolute;
+      top: -1.9em;
+      left: -0.5em;
+      background: none;
+      border: 2px solid white;
+      color: yellow;
+      width: 3.5em;
+      height: 3.5em;
+      line-height: 3.5em;
+      margin: 0.5em; }
+
+.ContactHeader {
+  font-size: 3em;
+  margin: 0;
+  color: yellow;
+  text-align: center; }
+  .ContactHeader:after {
+    content: '?';
+    color: white; }
+
+.ContactForm {
+  position: relative;
+  max-height: 90%;
+  width: 90%;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  max-width: 50em; }
+
+.Input {
+  width: 100%;
+  height: 3.5em;
+  margin-bottom: 4%;
+  border: 2px solid white;
+  border-right: none;
+  border-top: none;
+  border-left: none;
+  background-color: #00111E;
+  resize: none;
+  padding-left: 4em;
+  color: white; }
+  .Input::placeholder {
+    font-size: 15px;
+    font-family: 'Lato', serif; }
+  .Input:focus {
+    outline: none; }
+
+.Message {
+  border-left: 2px solid white;
+  height: 10em;
+  padding: 10px; }
+  .Message::placeholder {
+    font-size: 15px;
+    font-family: 'Lato', serif; }
+
+.SubmitFormButton {
+  background: none;
+  color: yellow;
+  border: 2px solid white;
+  padding: 10px;
+  cursor: pointer;
+  transition: .2s; }
+  .SubmitFormButton:hover {
+    background-color: white;
+    color: #00111E; }
+
+.left {
+  left: -1%; }
+
+.animate-show {
+  display: block;
+  animation: show .3s; }
+
+.hide {
+  display: none; }
+
+footer {
+  display: none;
+  height: 3em;
+  width: 100%;
+  background-color: black; }
+  footer p {
+    text-align: center;
+    color: white; }
+
+::-webkit-scrollbar {
+  display: none; }
+
+.EmailSentWrapper {
+  position: relative;
+  font-family: 'Lato', serif; }
+
+.EmailSent {
+  position: absolute;
+  text-align: center;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); }
+  .EmailSent h1 {
+    font-size: 30px;
+    color: yellow; }
+  .EmailSent p {
+    font-size: 16px;
+    color: white; }
+
+@keyframes moving {
+  0% {
+    opacity: 1;
+    top: 10%; }
+  100% {
+    opacity: 0;
+    top: 40%; } }
+
+@keyframes dim {
+  0% {
+    opacity: 1; }
+  100% {
+    opacity: 0.2; } }
+
+@keyframes flash {
+  0% {
+    color: white;
+    text-shadow: 0 0 15px white; }
+  50% {
+    color: yellow;
+    text-shadow: 0 0 100px white; }
+  100% {
+    color: white;
+    text-shadow: 0 0 15px white; } }
+
+@keyframes kick {
+  0% {
+    transform: rotate(0); }
+  25% {
+    transform: rotate(-15deg); }
+  50% {
+    transform: rotate(15deg); }
+  75% {
+    transform: rotate(-15deg); }
+  100% {
+    transform: rotate(0deg); } }
+
+@keyframes blink {
+  50% {
+    opacity: 0; } }
+
+@media (max-width: 900px) {
+  .Logo {
+    font-size: 6em; } }
+
+@media (max-width: 768px) {
+  .BurgerLine {
+    width: 50px !important; } }
+
+@media (max-width: 700px) {
+  body {
+    overflow-y: auto;
+    overflow-x: hidden; }
+  section {
+    float: none;
+    height: auto; }
+  .Home {
+    padding: 0; }
+  .Contact {
+    height: auto;
+    min-height: 500px;
+    max-height: 700px; }
+  .WorksContainer .Work {
+    width: 90%;
+    height: 250px;
+    margin: 2.5% auto;
+    max-width: 450px;
+    opacity: 1; }
+  .WelcomeTextContainer {
+    width: 80%;
+    left: 10%; }
+  .ScrollingAnimation {
+    display: none; }
+  .WorksContainer {
+    min-height: 700px; }
+  .WorkInfo {
+    display: block; }
+  .ContactInfoContainer {
+    width: 100%;
+    min-height: 48em; }
+  .FormContainer {
+    transform: none;
+    width: 100%;
+    margin-bottom: 3em; }
+  .ContactForm {
+    display: block;
+    padding: 1em;
+    border: none;
+    box-shadow: none; }
+  footer {
+    display: inline-block; } }
+
+@media (max-width: 480px) {
+  .WorkInfo {
+    display: block; }
+  .Logo {
+    font-size: 5em; }
+  .About {
+    padding: 0; }
+  .AboutLeftCol {
+    width: 45%; } }
+
+@media (min-width: 768px) {
+  .WorkInfo:hover {
+    width: 12em;
+    height: 12em; }
+    .WorkInfo:hover .WorkInfoIcon {
+      right: 40%;
+      background-color: rgba(255, 255, 255, 0.2); }
+    .WorkInfo:hover .GithubIcon {
+      display: inline-block;
+      background-color: rgba(255, 255, 255, 0.2);
+      bottom: 45%;
+      right: 15%; }
+  .WorkDesc p {
+    font-size: 1.6em; } }
+
+@media (max-width: 400px) {
+  .Logo {
+    font-size: 4em; } }
+
+@media (max-width: 360px) {
+  .Logo {
+    font-size: 3.5em; } }
+
+@media (max-height: 480px) {
+  .BurgerLine {
+    width: 50px !important; }
+  .ContactForm,
+  .About {
+    position: static;
+    transform: none;
+    padding-top: 3em; } }
+
+@media (max-height: 600px) {
+  .NavItem {
+    font-size: 30px; }
+  .NavLogo {
+    top: 5%; } }
+
+@media (max-height: 300px) {
+  body {
+    overflow-x: hidden; } }
+
+@media (min-width: 700px) and (max-width: 768px) and (min-height: 700px) and (max-height: 1024px) {
+  .WorksContainer {
+    justify-content: space-around; }
+  .Work {
+    height: 30%;
+    margin: 12.5% 1.66%; } }
+
+@media (min-width: 900px) {
+  .About {
+    min-height: 48em; }
+  .ContactForm {
+    min-height: 48em; }
+  .WorkDesc p {
+    font-size: 1.8em; } }
+
+/*# sourceMappingURL=style.css.map */

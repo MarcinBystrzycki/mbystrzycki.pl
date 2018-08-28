@@ -1,0 +1,706 @@
+@import url('https://fonts.googleapis.com/css?family=Monoton')
+
+*
+  box-sizing: border-box
+
+body
+  margin: 0
+  overflow: hidden
+  font-family: 'Bellefair', serif
+  background-color: #00111E
+  font-size: 10px
+
+section
+  float: left
+  height: 100vh
+  width: 100vw
+
+canvas
+  height: 100vh
+
+nav
+  position: fixed
+  top: 0
+  right: 0
+  width: 6em
+  height: 8em
+  z-index: 10
+  background-color: transparent
+
+.Home
+  text-align: center
+
+.MenuButtonWrapper
+  position: relative
+  z-index: 10
+
+.MenuButton
+  cursor: pointer
+  height: 70px
+  width: 50px
+  .BurgerLine
+    display: block
+    position: absolute
+    height: 2px
+    background-color: white
+    box-shadow: 0 0 35px white
+    transition: .1s ease-out
+    &:nth-of-type(1)
+      top: 20px
+      width: 50px
+    &:nth-of-type(2)
+      top: 30px
+      width: 30px
+    &:nth-of-type(3)
+      top: 40px
+      width: 45px
+    &:nth-of-type(4)
+      top: 50px
+      width: 20px
+      
+.rotated
+  top: 40px !important
+  transition: .2s ease-out
+
+.rotated2
+  @extend .BurgerLine, .rotated
+  transform: rotate(90deg)
+  background-color: yellow !important
+  animation: rotation2 .3s infinite
+
+.rotated1
+  @extend .BurgerLine, .rotated
+  transform: rotate(45deg)
+  animation: rotation1 .3s infinite
+
+.rotated0
+  @extend .BurgerLine, .rotated
+  transform: rotate(0deg)
+  background-color: yellow !important
+  animation: rotation0 .3s infinite
+
+.rotated3
+  @extend .BurgerLine, .rotated
+  transform: rotate(135deg)
+  animation: rotation3 .3s infinite
+
+@keyframes rotation0
+  100%
+    transform: rotate(225deg)
+
+@keyframes rotation1
+  100%
+    transform: rotate(270deg)
+
+@keyframes rotation2
+  100%
+    transform: rotate(315deg)
+
+@keyframes rotation3
+  100%
+    transform: rotate(360deg)
+
+.NavContainer
+  position: absolute
+  right: 0
+  top: 0
+  width: 100vw
+  height: 100vh
+  display: block
+  background-color: black
+  z-index: 9
+  display: none
+  opacity: 0.97
+  overflow: hidden
+
+.NavListWrapper
+  position: absolute
+  top: 50%
+  left: 50%
+  transform: translate(-50%, -50%)
+  hr
+    width: 6em
+    box-shadow: 0 0 35px white
+    border-color: yellow
+
+.NavList
+  text-align: center
+  padding: 0
+
+.NavItem
+  font-size: 50px
+  list-style-type: none
+  margin-top: 0.4em
+  margin-bottom: 0.4em
+  text-shadow: 0 0 35px white
+  a
+    text-decoration: none
+    display: inline-block
+    max-width: 8em
+    color: white
+    letter-spacing: 3px
+    transition: .3s
+    &:hover
+      span
+        display: inline-block
+        animation: kick .8s infinite;
+        -webkit-animation: kick .8s infinite;
+        &:nth-of-type(1)
+          color: yellow
+
+.Home
+  position: relative
+  user-select: none
+  &:before
+    content: ""
+    position: relative
+    display: block
+    width: 100px
+    background-color: transparent
+    box-shadow: 0 100px 100px white
+
+.Logo
+  position: absolute
+  bottom: 3%
+  left: 2%
+  font-size: 10px
+  width: 20em
+  height: 20em
+  border: 2em solid white
+
+.LogoOut
+  position: relative
+  width: 12em
+  height: 12em
+  margin: 2em
+  border: 2em dashed white
+  background-color: transparent
+
+.NavLogo
+  position: relative
+  top: 1%
+  margin: 0 auto
+  font-family: 'Monoton', cursive
+  p
+    font-size: 5em
+    text-align: center
+    line-height: 0.91em
+    padding-top: 0.5em
+    margin: 0 auto
+    color: white
+    text-shadow: 0 0 20px white
+    animation: flash 3s infinite
+
+.LogoIn
+  position: absolute
+  right: -2em
+  bottom: -2em
+  width: 11em
+  height: 11em
+  background-color: #00111E
+  .Initials
+    margin: 0
+    padding-left: 25px
+    font-size: 9.5em
+    font-family: 'Monoton', cursive
+    color: white
+    text-shadow: 0 0 15px white
+    span
+      animation: flash 4s infinite
+
+.WelcomeTextContainer
+  position: absolute
+  top: 20%
+  right: 15%
+  width: 50em
+
+.WelcomeText
+  color: white
+  font-size: 15px
+  letter-spacing: .3em
+  text-align: justify
+  text-shadow: 0 0 20px white
+  span
+    border-right: .1em solid yellow
+    animation: blink 1s infinite
+
+.ScrollingAnimation
+  position: absolute
+  right: 0.75em
+  bottom: 0.75em
+  width: 3.5em
+  height: 5em
+  border: 2px solid white
+  border-radius: 5em
+  box-shadow: 0 0 5px white
+  span
+    display: inline-block
+    width: 0.5em
+    height: 1em
+    background-color: white
+    border-radius: 1em
+    position: relative
+    animation: moving 1s infinite 
+
+.WorksContainer
+  height: 100%
+  width: auto
+  display: flex
+  flex-wrap: wrap
+  justify-content: flex-start
+
+
+.Work
+  border: 2px solid rgb(0, 17, 30)
+  display: none
+  height: 45%
+  width: 30%
+  margin: 1% 1.66%
+  transition: .3s ease-out
+  -webkit-box-shadow: none
+  -moz-box-shadow: none
+  box-shadow: none
+  background-repeat: no-repeat
+  background-size: 100% 100%
+  position: relative
+  overflow: hidden
+  animation: dim .5s
+  opacity: 0.2
+  &:hover
+    -webkit-box-shadow: 0 0 50px rgba(255, 255, 255, 0.33)
+    -moz-box-shadow: 0 0 50px rgba(255, 255, 255, 0.33)
+    box-shadow: 0 0 50px rgba(255, 255, 255, 0.33)
+    opacity: 1
+    .WorkInfo
+      display: inline-block
+
+.WorkInfo
+  position: absolute
+  cursor: pointer
+  z-index: 1
+  display: none
+  background-color: rgb(0, 17, 30)
+  left: -25px
+  top: -25px
+  width: 7em
+  height: 7em
+  border-radius: 50%
+  color: yellow
+  transition: .2s ease-out
+  border: 2px solid rgb(0, 17, 30)
+  button
+    font-size: 25px
+    position: absolute
+    line-height: 34px
+    width: 36px
+    height: 36px
+    background-color: transparent
+    border: none
+    border-radius: 50%
+    right: 18%
+    bottom: 13%
+    transition: .2s ease-out
+    cursor: pointer
+    &:focus
+      outline: none
+    &:hover
+      i 
+        color: white
+    i
+      color: yellow
+      
+.GithubIcon
+  display: none
+  i
+    position: relative
+
+.WorkDesc
+  position: absolute
+  top: -1px
+  left: -160%
+  width: 160%
+  height: 102%
+  background-color: rgba(0, 17, 30, 0.95)
+  transition: .2s ease-out
+  -webkit-clip-path: polygon(0 0, 100% 0%, 70% 100%, 0% 100%);
+  clip-path: polygon(0 0, 100% 0%, 70% 100%, 0% 100%);
+  p
+    position: relative
+    left: 0
+    right: 0
+    top: 20%
+    font-size: 1.2em
+    text-align: justify
+    color: white
+    max-width: 45%
+    margin-left: 9%
+    user-select: none
+    span
+      color: yellow
+
+.TodoApp
+  background-image: url('../img/todoapp.jpg')
+
+.Kanban
+  background-image: url('../img/kanban.jpg')
+
+.Portfolio
+  background-image: url('../img/portfolio.jpg')
+
+.QuoteMachine
+  background-image: url('../img/quotemachine.jpg') 
+
+.CountryApp
+  background-image: url('../img/countryapp.jpg') 
+
+.ChatApp
+  background-image: url('../img/chatapp.jpg')
+
+.Contact
+  display: flex
+  flex-wrap: wrap
+  hr
+    width: 5em
+    border-color: white
+    margin-bottom: 3em
+
+.ContactInfoContainer
+  width: 50%
+  height: 100%
+  color: white
+  position: relative
+
+.About
+  max-height: 90%
+  width: 90%
+  max-width: 50em
+  position: absolute
+  margin: 0 auto
+  top: 50%
+  left: 50%
+  transform: translate(-50%, -50%)
+
+.AboutLeftCol,
+.AboutRightCol
+  width: 50%
+  float: left
+  font-size: 2em
+  margin-bottom: 0.5em
+  overflow-wrap: break-word
+
+.AboutLeftCol
+  text-transform: uppercase
+  p
+    &:first-letter
+      color: yellow
+
+.AboutRightCol
+  border-left: 1px solid rgba(255, 255, 255, 0.1)
+  padding-left: 1em
+
+.ContactText
+  font-size: 2em
+  float: left
+  text-align: justify
+  width: 100%
+  span
+    color: yellow
+  
+.FormContainer 
+  position: relative
+  width: 50%
+  height: 100%
+  text-align: center
+  display: flex
+  justify-content: center
+  align-content: center
+  label
+    position: relative
+    max-width: 70%
+    button
+      position: absolute
+      top: -1.9em
+      left: -0.5em
+      background: none
+      border: 2px solid white
+      color: yellow
+      width: 3.5em
+      height: 3.5em
+      line-height: 3.5em
+      margin: 0.5em
+
+.ContactHeader
+  font-size: 3em
+  margin: 0
+  color: yellow
+  text-align: center
+  &:after
+    content: '?'
+    color: white
+
+.ContactForm
+  position: relative
+  max-height: 90%
+  width: 90%
+  left: 50%
+  top: 50%
+  transform: translate(-50%, -50%)
+  max-width: 50em
+
+.Input
+  width: 100%
+  height: 3.5em
+  margin-bottom: 4%
+  border: 2px solid white
+  border-right: none
+  border-top: none
+  border-left: none
+  background-color: #00111E
+  resize: none
+  padding-left: 4em
+  color: white
+  &::placeholder
+    font-size: 15px
+    font-family: 'Bellefair', serif
+  &:focus
+    outline: none
+  
+.Message
+  border-left: 2px solid white
+  height: 10em
+  padding: 10px
+  &::placeholder
+    font-size: 15px
+    font-family: 'Bellefair', serif
+
+.SubmitFormButton
+  background: none
+  color: yellow
+  border: 2px solid white
+  padding: 10px
+  cursor: pointer
+  transition: .2s
+  &:hover
+    background-color: white
+    color: #00111E
+
+.left
+  left: -1%
+
+.show
+  display: block
+  animation: flash
+
+.animate-show
+  display: block
+  animation: show .3s
+
+.hide
+  display: none
+
+footer
+  display: none
+  height: 3em
+  width: 100%
+  background-color: black
+  p
+    text-align: center
+    color: white
+
+::-webkit-scrollbar
+  display: none
+
+.EmailSentWrapper
+  position: relative
+  font-family: 'Bellefair', serif
+
+.EmailSent
+  position: absolute
+  text-align: center
+  top: 50%
+  left: 50%
+  transform: translate(-50%, -50%)
+  h1
+    font-size: 30px
+    color: yellow
+  p
+    font-size: 16px
+    color: white
+
+@keyframes moving
+  0%
+    opacity: 1
+    top: 10%
+  100%
+    opacity: 0
+    top: 40%
+
+@keyframes dim
+  0%
+    opacity: 1
+  100%
+    opacity: 0.2
+
+@keyframes flash
+  0%
+    color: white
+    text-shadow: 0 0 15px white
+  50%
+    color: yellow
+    text-shadow: 0 0 100px white
+  100%
+    color: white
+    text-shadow: 0 0 15px white
+
+@keyframes kick
+  0%
+    transform: rotate(0)
+  25%
+    transform: rotate(-15deg)
+  50%
+    transform: rotate(15deg)
+  75%
+    transform: rotate(-15deg)
+  100%
+    transform: rotate(0deg)
+
+@keyframes blink
+  50%
+    border-color: transparent
+
+
+@media (max-width: 900px)
+  .Logo
+    font-size: 7px
+@media (max-width: 768px)
+  .BurgerLine
+    width: 50px !important
+@media (max-width: 700px) 
+  body
+    overflow-y: auto
+    overflow-x: hidden
+  section
+    float: none
+  .Home
+    padding: 0
+  .Contact
+    height: auto
+    min-height: 500px
+    max-height: 700px
+  .Works
+    margin-top: 5em
+    height: auto
+    min-height: 700px
+  .Logo
+    font-size: 5px
+    .Initials
+      padding-left: 10px
+  .WelcomeTextContainer
+    width: 80%
+    left: 10%
+  .ScrollingAnimation
+    display: none
+  .WorksContainer
+    min-height: 700px
+  .Work
+    display: block
+    width: 45%
+    height: 30%
+    margin: 2.5%
+    opacity: 1
+    -webkit-box-shadow: 0 0 30px rgba(255, 255, 255, 0.33)
+    -moz-box-shadow: 0 0 30px rgba(255, 255, 255, 0.33)
+    box-shadow: 0 0 30px rgba(255, 255, 255, 0.33)
+  .WorkInfo
+    display: block
+  .ContactInfoContainer
+    width: 100%
+    min-height: 48em 
+  .FormContainer
+    transform: none
+    width: 100%
+    margin-bottom: 3em
+  .ContactForm
+    display: block
+    padding: 1em
+    border: none
+    box-shadow: none
+  footer
+    display: inline-block
+
+@media (max-width: 480px)
+  .WorkInfo
+    display: block
+  .Logo
+    font-size: 4px 
+  .About
+    padding: 0
+  .AboutLeftCol
+    width: 45%
+
+@media (min-width: 768px)
+  .WorkInfo
+    &:hover
+      width: 12em
+      height: 12em
+      .WorkInfoIcon
+        right: 40%
+        background-color: rgba(255, 255, 255, 0.2)
+      .GithubIcon
+        display: inline-block
+        background-color: rgba(255, 255, 255, 0.2)
+        bottom: 45%
+        right: 15%
+  .WorkDesc
+    p
+      font-size: 1.6em
+
+@media (max-width: 400px)
+  .Logo
+    font-size: 4px
+  .WorksContainer
+    .Work
+      width: 90%
+      height: 250px
+      margin: 5%
+
+@media (max-width: 360px)
+  .Logo
+    font-size: 3px
+  .FrontEndTitle
+    font-size: 5px
+
+@media (max-height: 480px)
+  .BurgerLine
+    width: 50px !important
+  .ContactForm,
+  .About
+    position: static
+    transform: none
+    padding-top: 3em
+
+@media (max-height: 600px)
+  .NavItem
+    font-size: 30px
+  .NavLogo
+    top: 5%
+
+@media (max-height: 300px)
+  body
+    overflow-x: hidden
+
+@media (min-width: 700px) and (max-width: 768px) and (min-height: 700px) and (max-height: 1024px)
+  .WorksContainer
+    justify-content: space-around
+  .Work
+    height: 30%
+    margin: 12.5% 1.66%
+
+@media (min-width: 900px)
+  .About
+    min-height: 48em
+  .ContactForm
+    min-height: 48em
+  .WorkDesc
+    p
+      font-size: 1.8em
