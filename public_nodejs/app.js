@@ -8,7 +8,6 @@ const cors = require('cors');
 const uuid = require('uuid');
 const app = express();
 const nodemailer = require('nodemailer');
-const history = require('connect-history-api-fallback');
 
 dotenv.config();
 
