@@ -12,7 +12,7 @@ self.__precacheManifest = [
     "url": "/cash_vue/dist/fonts/fa-solid-900.2d0415fa.woff"
   },
   {
-    "revision": "2eef0a153e1ba5b12f69eb81f45bca8c",
+    "revision": "cb48356d327ba2cbfc2f16dc4383a2f5",
     "url": "/cash_vue/dist/index.html"
   },
   {
@@ -81,6 +81,6 @@ self.__precacheManifest = [
   },
   {
     "revision": "10e34ecc34cf77348155",
-    "url": "/cash_vue/dist/css/app.2c74ad5c.css"
+    "url": "/cash_vue/dist/css/app.8aa4056f.css"
   }
 ];

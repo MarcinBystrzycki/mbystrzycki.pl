@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.1.0/workbox-sw.js");
 
 importScripts(
-  "/cash_vue/dist/precache-manifest.71718e83da385e07a70c7c4c53901adf.js"
+  "/cash_vue/dist/precache-manifest.8574a12d967e287b0c1109d528037644.js"
 );
 
 workbox.core.setCacheNameDetails({prefix: "SimpleVueProject"});
