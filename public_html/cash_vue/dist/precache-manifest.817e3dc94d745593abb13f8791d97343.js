@@ -12,7 +12,7 @@ self.__precacheManifest = [
     "url": "/cash_vue/dist/fonts/fa-solid-900.2d0415fa.woff"
   },
   {
-    "revision": "9a2c91e9a4b23d8f8ca9f29bfdfe8222",
+    "revision": "7284272c0b846e0e011fdf4fdbf08370",
     "url": "/cash_vue/dist/index.html"
   },
   {
@@ -20,8 +20,8 @@ self.__precacheManifest = [
     "url": "/cash_vue/dist/js/manifest.a8669af4.js"
   },
   {
-    "revision": "d7ef4b56886f82409234",
-    "url": "/cash_vue/dist/js/app.d7ef4b56.js"
+    "revision": "019834a3add0c1aa2c06",
+    "url": "/cash_vue/dist/js/app.019834a3.js"
   },
   {
     "revision": "8d9ab84bfe87a3f77112a6698cf639fb",
@@ -80,7 +80,7 @@ self.__precacheManifest = [
     "url": "/cash_vue/dist/fonts/fa-brands-400.6814d0e8.woff2"
   },
   {
-    "revision": "d7ef4b56886f82409234",
-    "url": "/cash_vue/dist/css/app.83318f79.css"
+    "revision": "019834a3add0c1aa2c06",
+    "url": "/cash_vue/dist/css/app.dc7d56e5.css"
   }
 ];
